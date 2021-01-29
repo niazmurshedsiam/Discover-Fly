@@ -54,7 +54,7 @@
                     <input id="firstclassCount"  class="inp-style inp-width" type="number" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span id="firstclassIncrement">+</span> <span>-</span> </p>
+                    <p> <span onclick="handleBookingChange(true)">+</span> <span onclick="handleBookingChange(false)">-</span> </p>
                 </div>
             </div>
             
@@ -64,7 +64,7 @@
                     <input class="inp-style inp-width" type="number" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span><span>-</span> </p>
+                    <p> <span>+</span><span> -</span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -105,16 +105,51 @@
     </section>
 
     <script>
-        document.getElementById('firstclassIncrement').addEventListener("click",function(){
-            const firstclassInput = document.getElementById('firstclassCount');
+        //document.getElementById('firstclassIncrement').addEventListener("click",function(){
+            
+           // handleBookingChange(true);
+                               
+                               //firstclassIncrement no reapt 
+            //const firstclassInput = document.getElementById('firstclassCount');
+            //const firstclassCount = parseInt(firstclassInput.value);
+            //const firstclassNewCount = firstclassCount + 1;
+            //firstclassInput.value = firstclassNewCount;
+            //const firstclassTotal = firstclassNewCount * 150;
+            //document.getElementById('firstclassTotal').innerHTML = 'First Class ($' + firstclassTotal +')';
+            
+            //console.log(firstclassCount);
+        //});
+        //document.getElementById('firstclassDecrement').addEventListener("click",function(){
+           // handleBookingChange(false);
+
+                                    //firstclassDecrement no reapt
+            //const firstclassInput =document.getElementById('firstclassCount');
+            //const firstclassCount = parseInt(firstclassInput.value);
+            //const firstclassNewCount = firstclassCount - 1;
+            //firstclassInput.value = firstclassNewCount;
+            //const firstclassTotal = firstclassNewCount * 150;
+            //document.getElementById('firstclassTotal').innerHTML = 'First Class ($' + firstclassTotal +')';
+            
+        //});
+        function handleBookingChange(isIncrease){
+            const firstclassInput =document.getElementById('firstclassCount');
             const firstclassCount = parseInt(firstclassInput.value);
-            const firstclassNewCount = firstclassCount + 1;
+            //const firstclassNewCount = firstclassCount - 1;
+            let firstclassNewCount = firstclassCount;
+            if(isIncrease == true){
+                firstclassNewCount = firstclassCount + 1;
+            }
+            if(isIncrease == false && firstclassCount > 0){
+                firstclassNewCount = firstclassCount - 1;
+            }
+            
             firstclassInput.value = firstclassNewCount;
             const firstclassTotal = firstclassNewCount * 150;
             document.getElementById('firstclassTotal').innerHTML = 'First Class ($' + firstclassTotal +')';
+            
+                                   
+        }
 
-            //console.log(firstclassCount);
-        })
 
     </script>
 
