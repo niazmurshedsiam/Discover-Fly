@@ -50,11 +50,11 @@
             </div>
             <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <label id="firstclassTotal" for="">First Class ($150)</label>
+                    <input id="firstclassCount"  class="inp-style inp-width" type="number" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <p>+ -</p>
+                    <p> <span id="firstclassIncrement">+</span> <span>-</span> </p>
                 </div>
             </div>
             
@@ -64,7 +64,7 @@
                     <input class="inp-style inp-width" type="number" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
+                    <p> <span>+</span><span>-</span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -103,6 +103,20 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
         </div>
     </section>
+
+    <script>
+        document.getElementById('firstclassIncrement').addEventListener("click",function(){
+            const firstclassInput = document.getElementById('firstclassCount');
+            const firstclassCount = parseInt(firstclassInput.value);
+            const firstclassNewCount = firstclassCount + 1;
+            firstclassInput.value = firstclassNewCount;
+            const firstclassTotal = firstclassNewCount * 150;
+            document.getElementById('firstclassTotal').innerHTML = 'First Class ($' + firstclassTotal +')';
+
+            //console.log(firstclassCount);
+        })
+
+    </script>
 
     <!--Thank You-->
 </body>
