@@ -60,11 +60,11 @@
             
             <div class="input-group f-class">
                 <div>
-                    <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <label id="EconomyTotal" for="">Economy ($100)</label>
+                    <input id="EconomyCount"  class="inp-style inp-width" type="number" name=""> 
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span><span> -</span> </p>
+                    <p> <span onclick="handleBookingChang(true)">+</span><span onclick="handleBookingChang(false)"> -</span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -106,6 +106,42 @@
 
     <script>
 
+        function handleBookingChange(isIncrease){
+            const firstclassInput =document.getElementById('firstclassCount');
+            const firstclassCount = parseInt(firstclassInput.value);
+            //const firstclassNewCount = firstclassCount - 1;
+            let firstclassNewCount = firstclassCount;
+            if(isIncrease == true){
+                firstclassNewCount = firstclassCount + 1;
+            }
+            if(isIncrease == false && firstclassCount > 0){
+                firstclassNewCount = firstclassCount - 1;
+            }
+            
+            firstclassInput.value = firstclassNewCount;
+            const firstclassTotal = firstclassNewCount * 150;
+            document.getElementById('firstclassTotal').innerHTML = 'First Class ($' + firstclassTotal +')';
+            
+                                   
+        }
+        function handleBookingChang(isIncrease){
+            const EconomyInput =document.getElementById('EconomyCount');
+            const EconomyCount = parseInt(EconomyInput.value);
+            //const firstclassNewCount = firstclassCount - 1;
+            let EconomyNewCount = EconomyCount;
+            if(isIncrease == true){
+                EconomyNewCount = EconomyCount + 1;
+            }
+            if(isIncrease == false && EconomyCount > 0){
+                EconomyNewCount = EconomyCount - 1;
+            }
+            EconomyInput.value = EconomyNewCount;
+            const EconomyTotal = EconomyNewCount * 100;
+            document.getElementById('EconomyTotal').innerHTML = 'Economy ($' + EconomyTotal +')';
+            
+                                   
+        }
+
 
                                 //firstclassIncrement no reapt 
 
@@ -135,24 +171,24 @@
             //document.getElementById('firstclassTotal').innerHTML = 'First Class ($' + firstclassTotal +')';
             
         //});
-        function handleBookingChange(isIncrease){
-            const firstclassInput =document.getElementById('firstclassCount');
-            const firstclassCount = parseInt(firstclassInput.value);
+        //function handleBookingChange(isIncrease){
+            //const firstclassInput =document.getElementById('firstclassCount');
+            //const firstclassCount = parseInt(firstclassInput.value);
             //const firstclassNewCount = firstclassCount - 1;
-            let firstclassNewCount = firstclassCount;
-            if(isIncrease == true){
-                firstclassNewCount = firstclassCount + 1;
-            }
-            if(isIncrease == false && firstclassCount > 0){
-                firstclassNewCount = firstclassCount - 1;
-            }
+            //let firstclassNewCount = firstclassCount;
+            //if(isIncrease == true){
+              //  firstclassNewCount = firstclassCount + 1;
+            //}
+            //if(isIncrease == false && firstclassCount > 0){
+              //  firstclassNewCount = firstclassCount - 1;
+            //}
             
-            firstclassInput.value = firstclassNewCount;
-            const firstclassTotal = firstclassNewCount * 150;
-            document.getElementById('firstclassTotal').innerHTML = 'First Class ($' + firstclassTotal +')';
+            //firstclassInput.value = firstclassNewCount;
+           // const firstclassTotal = firstclassNewCount * 150;
+         //   document.getElementById('firstclassTotal').innerHTML = 'First Class ($' + firstclassTotal +')';
             
                                    
-        }
+       // }
 
 
     </script>
