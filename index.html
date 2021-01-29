@@ -106,32 +106,32 @@
 
     <script>
 
-        function handleBookingChange(SetBook,isIncrease){
-           // const SetBookInput =document.getElementById(SetBook + 'Count');
-           const SetBookCount = getInputValue(SetBook);
+        function handleBookingChange(FightSetBook,isIncrease){
+           // const FightSetBookInput =document.getElementById(FightSetBook + 'Count');
+           const FightSetBookCount = getInputValue(FightSetBook);
             //const firstclassNewCount = firstclassCount - 1;
-            let SetBookNewCount = SetBookCount;
+            let FightSetBookNewCount = FightSetBookCount;
             if(isIncrease == true){
-                SetBookNewCount = SetBookCount + 1;
+                FightSetBookNewCount = FightSetBookCount + 1;
             }
-            if(isIncrease == false && SetBookCount > 0){
-                SetBookNewCount = SetBookCount - 1;
+            if(isIncrease == false && FightSetBookCount > 0){
+                FightSetBookNewCount = FightSetBookCount - 1;
             }
             
-            //SetBookInput.value = SetBookNewCount;
-            //const SetBookTotal = SetBookNewCount * 150;
-            document.getElementById(SetBook + 'Count').value = SetBookNewCount;
-            let SetBookTotal = 0;
-            if(SetBook == 'firstclass'){
-                SetBookTotal = SetBookNewCount * 150;
-                document.getElementById(SetBook + 'Total').innerHTML = 'First Class ($'+SetBookTotal+')';
+            //FightSetBookInput.value = FightSetBookNewCount;
+            //const FightSetBookTotal = FightSetBookNewCount * 150;
+            document.getElementById(FightSetBook + 'Count').value = FightSetBookNewCount;
+            let FightSetBookTotal = 0;
+            if(FightSetBook == 'firstclass'){
+                FightSetBookTotal = FightSetBookNewCount * 150;
+                document.getElementById(FightSetBook + 'Total').innerHTML = 'First Class ($'+FightSetBookTotal+')';
             }
-            if(SetBook =='economy'){
-                SetBookTotal = SetBookNewCount * 100;
-                document.getElementById(SetBook + 'Total').innerHTML = 'Economy ($'+SetBookTotal+')';
+            if(FightSetBook =='economy'){
+                FightSetBookTotal = FightSetBookNewCount * 100;
+                document.getElementById(FightSetBook + 'Total').innerHTML = 'Economy ($'+FightSetBookTotal+')';
 
             }
-            //document.getElementById(SetBook + 'Total').innerHTML = '$' + SetBookTotal;
+            //document.getElementById(FightSetBook + 'Total').innerHTML = '$' + FightSetBookTotal;
             calculateTotal();
                                    
         }
@@ -151,11 +151,11 @@
             document.getElementById('grand-total').innerText = '$' + grandTotal;
         }
 
-        function getInputValue(SetBook) {
-            console.log(SetBook);
-            const SetBookInput = document.getElementById(SetBook + 'Count');
-            const SetBookCount = parseInt(SetBookInput.value);
-            return SetBookCount;
+        function getInputValue(FightSetBook) {
+            console.log(FightSetBook);
+            const FightSetBookInput = document.getElementById(FightSetBook + 'Count');
+            const FightSetBookCount = parseInt(FightSetBookInput.value);
+            return FightSetBookCount;
         }
         //<!-- function handleBookingChang(isIncrease){
           //  const EconomyInput =document.getElementById('EconomyCount');
