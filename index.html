@@ -106,32 +106,32 @@
 
     <script>
 
-        function handleBookingChange(Room,isIncrease){
-           // const RoomInput =document.getElementById(Room + 'Count');
-           const RoomCount = getInputValue(Room);
+        function handleBookingChange(SetBook,isIncrease){
+           // const SetBookInput =document.getElementById(SetBook + 'Count');
+           const SetBookCount = getInputValue(SetBook);
             //const firstclassNewCount = firstclassCount - 1;
-            let RoomNewCount = RoomCount;
+            let SetBookNewCount = SetBookCount;
             if(isIncrease == true){
-                RoomNewCount = RoomCount + 1;
+                SetBookNewCount = SetBookCount + 1;
             }
-            if(isIncrease == false && RoomCount > 0){
-                RoomNewCount = RoomCount - 1;
+            if(isIncrease == false && SetBookCount > 0){
+                SetBookNewCount = SetBookCount - 1;
             }
             
-            //RoomInput.value = RoomNewCount;
-            //const RoomTotal = RoomNewCount * 150;
-            document.getElementById(Room + 'Count').value = RoomNewCount;
-            let RoomTotal = 0;
-            if(Room == 'firstclass'){
-                RoomTotal = RoomNewCount * 150;
-                document.getElementById(Room + 'Total').innerHTML = 'First Class ($'+RoomTotal+')';
+            //SetBookInput.value = SetBookNewCount;
+            //const SetBookTotal = SetBookNewCount * 150;
+            document.getElementById(SetBook + 'Count').value = SetBookNewCount;
+            let SetBookTotal = 0;
+            if(SetBook == 'firstclass'){
+                SetBookTotal = SetBookNewCount * 150;
+                document.getElementById(SetBook + 'Total').innerHTML = 'First Class ($'+SetBookTotal+')';
             }
-            if(Room =='economy'){
-                RoomTotal = RoomNewCount * 100;
-                document.getElementById(Room + 'Total').innerHTML = 'Economy ($'+RoomTotal+')';
+            if(SetBook =='economy'){
+                SetBookTotal = SetBookNewCount * 100;
+                document.getElementById(SetBook + 'Total').innerHTML = 'Economy ($'+SetBookTotal+')';
 
             }
-            //document.getElementById(Room + 'Total').innerHTML = '$' + RoomTotal;
+            //document.getElementById(SetBook + 'Total').innerHTML = '$' + SetBookTotal;
             calculateTotal();
                                    
         }
@@ -151,11 +151,11 @@
             document.getElementById('grand-total').innerText = '$' + grandTotal;
         }
 
-        function getInputValue(Room) {
-            console.log(Room);
-            const RoomInput = document.getElementById(Room + 'Count');
-            const RoomCount = parseInt(RoomInput.value);
-            return RoomCount;
+        function getInputValue(SetBook) {
+            console.log(SetBook);
+            const SetBookInput = document.getElementById(SetBook + 'Count');
+            const SetBookCount = parseInt(SetBookInput.value);
+            return SetBookCount;
         }
         //<!-- function handleBookingChang(isIncrease){
           //  const EconomyInput =document.getElementById('EconomyCount');
