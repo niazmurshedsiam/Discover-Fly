@@ -108,32 +108,32 @@
 
     <script>
 
-        function handleBookingChange(FightSetBook,isIncrease){
-           // const FightSetBookInput =document.getElementById(FightSetBook + 'Count');
-           const FightSetBookCount = getInputValue(FightSetBook);
+        function handleBookingChange(FlightSitBook,isIncrease){
+           // const FlightSitBookInput =document.getElementById(FlightSitBook + 'Count');
+           const FlightSitBookCount = getInputValue(FlightSitBook);
             //const firstclassNewCount = firstclassCount - 1;
-            let FightSetBookNewCount = FightSetBookCount;
+            let FlightSitBookNewCount = FlightSitBookCount;
             if(isIncrease == true){
-                FightSetBookNewCount = FightSetBookCount + 1;
+                FlightSitBookNewCount = FlightSitBookCount + 1;
             }
-            if(isIncrease == false && FightSetBookCount > 0){
-                FightSetBookNewCount = FightSetBookCount - 1;
+            if(isIncrease == false && FlightSitBookCount > 0){
+                FlightSitBookNewCount = FlightSitBookCount - 1;
             }
             
-            //FightSetBookInput.value = FightSetBookNewCount;
-            //const FightSetBookTotal = FightSetBookNewCount * 150;
-            document.getElementById(FightSetBook + 'Count').value = FightSetBookNewCount;
-            let FightSetBookTotal = 0;
-            if(FightSetBook == 'firstclass'){
-                FightSetBookTotal = FightSetBookNewCount * 150;
-                document.getElementById(FightSetBook + 'Total').innerHTML = 'First Class Total Prize ($'+FightSetBookTotal+')';
+            //FlightSitBookInput.value = FlightSitBookNewCount;
+            //const FlightSitBookTotal = FlightSitBookNewCount * 150;
+            document.getElementById(FlightSitBook + 'Count').value = FlightSitBookNewCount;
+            let FlightSitBookTotal = 0;
+            if(FlightSitBook == 'firstclass'){
+                FlightSitBookTotal = FlightSitBookNewCount * 150;
+                document.getElementById(FlightSitBook + 'Total').innerHTML = 'First Class Total Prize ($'+FlightSitBookTotal+')';
             }
-            if(FightSetBook =='economy'){
-                FightSetBookTotal = FightSetBookNewCount * 100;
-                document.getElementById(FightSetBook + 'Total').innerHTML = 'Economy Total Prize ($'+FightSetBookTotal+')';
+            if(FlightSitBook =='economy'){
+                FlightSitBookTotal = FlightSitBookNewCount * 100;
+                document.getElementById(FlightSitBook + 'Total').innerHTML = 'Economy Total Prize ($'+FlightSitBookTotal+')';
 
             }
-            //document.getElementById(FightSetBook + 'Total').innerHTML = '$' + FightSetBookTotal;
+            //document.getElementById(FlightSitBook + 'Total').innerHTML = '$' + FlightSitBookTotal;
             calculateTotal();
                                    
         }
@@ -153,11 +153,11 @@
             document.getElementById('grand-total').innerText = '$' + grandTotal;
         }
 
-        function getInputValue(FightSetBook) {
-            console.log(FightSetBook);
-            const FightSetBookInput = document.getElementById(FightSetBook + 'Count');
-            const FightSetBookCount = parseInt(FightSetBookInput.value);
-            return FightSetBookCount;
+        function getInputValue(FlightSitBook) {
+            console.log(FlightSitBook);
+            const FlightSitBookInput = document.getElementById(FlightSitBook + 'Count');
+            const FlightSitBookCount = parseInt(FlightSitBookInput.value);
+            return FlightSitBookCount;
         }
         //<!-- function handleBookingChang(isIncrease){
           //  const EconomyInput =document.getElementById('EconomyCount');
